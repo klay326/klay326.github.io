@@ -1,5 +1,5 @@
 ---
-title: Klay Adams
+title: /
 layout: home
 permalink: /
 ---
