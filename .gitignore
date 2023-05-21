@@ -3,4 +3,5 @@
 .sass-cache
 _site
 Gemfile.lock
-Gemfile
+_includes
+_layouts
