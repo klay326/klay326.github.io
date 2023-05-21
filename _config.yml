@@ -15,3 +15,5 @@ url: "https://klayadams.com" # the base hostname & protocol for your site, e.g. 
 remote_theme: Forthoney/consolo 
 plugins:
   - jekyll-feed
+exclude:
+  - Gemfile
