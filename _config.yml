@@ -6,7 +6,7 @@ author:
    personal: klayaa@me.com
  github_username: klay326
 header_pages:
- - page.md
+ - about_me.md
  - another_page.md
 message: Write some cool footer message here
 style: dark
