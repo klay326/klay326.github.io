@@ -10,8 +10,8 @@ header_pages:
  - another_page.md
 message: Write some cool footer message here
 style: dark
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://klayadams.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "Klay Adams" # the subpath of your site, e.g. /blog
+url: "https://klayadams.comadded" # the base hostname & protocol for your site, e.g. http://example.com
 remote_theme: Forthoney/consolo 
 plugins:
   - jekyll-feed
