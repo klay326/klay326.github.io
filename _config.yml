@@ -1,15 +1,18 @@
-# Sample _config.yml
 
-# title: consolo
-# author:
-#  name: Jay Doe
-#  email: 
-#    personal: example@personal.com
-#    school: example@school.edu
-#  github_username: octocat
-# header_pages:
-#  - page.md
-#  - another_page.md
-# message: Write some cool footer message here
-# style: dark
-# google_analytics: G-NNNNNNNNNN
+title: Klay Adams' Personal Site
+author:
+ name: Klay Adams
+ email: 
+   personal: klayaa@me.com
+
+ github_username: klay326
+header_pages:
+ - page.md
+ - another_page.md
+message: Write some cool footer message here
+style: dark
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://klay326.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+remote_theme: Forthoney/consolo 
+plugins:
+  - jekyll-feed
