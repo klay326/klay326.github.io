@@ -1,0 +1,55 @@
+\definecolor{tiRed}{RGB}{204,0,0}
+\definecolor{tiBlack}{RGB}{0,0,0}
+
+\titleformat{\section}{\color{tiRed}\LARGE\bfseries}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\color{tiBlack}\large\bfseries}{}{0em}{}
+\titleformat{\subsubsection}{\color{tiBlack}\itshape\bfseries}{}{0em}{}
+
+% Define a tight section command
+\newcommand{\resumesection}[1]{\section*{#1}}
+
+% Define heading command
+\newcommand{\heading}[1]{%
+  \noindent%
+  \large%
+  \textbf{#1}%
+  \vspace{0.7em}%
+}
+
+% Define subheading commands (ensure \normalsize is in effect)
+\newcommand{\subheadnbns}[1]{%
+  \noindent
+  \normalsize\makebox[\linewidth][c]{#1}%
+}
+\newcommand{\subheadnb}[1]{%
+  \subheadnbns{#1}%
+  \vspace{0.3em}%
+}
+\newcommand{\subheading}[1]{%
+  \subheadnb{\bfseries #1\hfill}%
+}
+
+% define blurb (centered, full-justified box) command
+\newcommand{\blurb}[1]{%
+  \noindent
+  \makebox[\linewidth][c]{%
+    \begin{minipage}[t]{0.9\linewidth}%
+      \normalsize              % <<< force normal text size
+      \hyphenpenalty=10000
+      \exhyphenpenalty=10000
+      \sloppy
+      #1%
+    \end{minipage}%
+  }%
+}
+
+\titleformat{name=\section,numberless}
+  {\color{tiRed}\LARGE\bfseries}{}{0em}{}[\color{tiRed}\titlerule]
+
+\titlespacing*{\section}{0pt}{1.5em}{0.8em}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=tiRed,
+    urlcolor=tiRed
+}

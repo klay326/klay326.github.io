@@ -1,0 +1,42 @@
+name: Compile LaTeX Resume
+
+on:
+  push:
+    paths:
+      - 'Klay Resume Latex/**'
+      - '.github/workflows/compile-resume.yml'
+    branches:
+      - main
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Compile LaTeX to PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: 0-main.tex
+          working_directory: Klay Resume Latex
+          compiler: pdflatex
+          args: -interaction=nonstopmode -halt-on-error
+
+      - name: Copy PDF to root
+        run: cp "Klay Resume Latex/0-main.pdf" "resume.pdf"
+
+      - name: Commit and push PDF
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          if git diff --quiet resume.pdf; then
+            echo "No changes to resume.pdf"
+          else
+            git add resume.pdf
+            git commit -m "Auto-compile: Update resume from LaTeX"
+            git push
+          fi
