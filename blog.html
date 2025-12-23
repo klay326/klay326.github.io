@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Klay Adams</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Klay Adams</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <div class="theme-switcher">
+                <label class="theme-label">Theme:</label>
+                <select class="theme-select">
+                    <option value="default">Terminal White</option>
+                    <option value="matrix">Matrix Green</option>
+                    <option value="ember">Ember DEC</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Blog</h1>
+                <p class="subtitle">Thoughts, tutorials, and experiments</p>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container">
+                <article class="blog-post" id="post-1">
+                    <h2><a href="#post-1">Welcome to My Blog</a></h2>
+                    <p class="post-date">December 23, 2025</p>
+                    <p>Welcome to my newly simplified personal website! I decided to move away from the complexity of Jekyll and static site generators to create something much simpler and more maintainable using just HTML and CSS.</p>
+                    <p>This approach gives me more control, fewer dependencies, and an easier codebase to update. Stay tuned for posts about Linux, IoT projects, and iOS development.</p>
+                </article>
+
+                <hr>
+
+                <article class="blog-post" id="post-2">
+                    <h2><a href="#post-2">More Posts Coming Soon</a></h2>
+                    <p class="post-date">Coming Soon</p>
+                    <p>I'm working on several posts about:</p>
+                    <ul>
+                        <li>Setting up a personal Linux server</li>
+                        <li>IoT projects with Raspberry Pi</li>
+                        <li>iOS development tips and tricks</li>
+                    </ul>
+                    <p>Check back soon!</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Klay Adams. All rights reserved.</p>
+            <p>
+                <a href="https://github.com/klay326" target="_blank">GitHub</a> •
+                <a href="mailto:klayaa@me.com">Email</a>
+            </p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

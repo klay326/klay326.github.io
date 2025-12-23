@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,600,700,800');
+
+/* Root Variables - Unix Terminal Style (White on Black) */
+:root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-color: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.3);
+    --card-bg: #0a0a0a;
+    --hover-color: #ffffff;
+    --selection-bg: rgba(255, 255, 255, 0.99);
+    --selection-text: #000;
+    --text-muted: #888888;
+    --text-bright: #ffffff;
+    --glow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Scanline Effect - CRT Monitor Style */
+@keyframes scanlines {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 2px;
+    }
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inconsolata', 'Courier New', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+/* Subtle scanline overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15) 0px,
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--card-bg);
+    border-bottom: solid 2px var(--accent-color);
+    border-top: solid 1px rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+    gap: 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    letter-spacing: 2px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.logo:hover {
+    color: var(--hover-color);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+    flex: 1 1 auto;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Theme Switcher - Dropdown Style */
+.theme-switcher {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.theme-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.theme-select {
+    padding: 0.5rem 0.8rem;
+    background-color: var(--card-bg);
+    border: solid 1px var(--accent-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-family: 'Inconsolata', 'Courier New', monospace;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.2em 1.2em;
+    padding-right: 2rem;
+}
+
+.theme-select:hover {
+    box-shadow: 0 0 10px var(--glow);
+}
+
+.theme-select:focus {
+    outline: none;
+    box-shadow: 0 0 15px var(--glow);
+}
+
+.theme-select option {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 0.5rem;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    padding: 4rem 20px;
+    text-align: center;
+    border-bottom: solid 2px var(--accent-color);
+    border-top: solid 1px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
+}
+
+.hero .subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+/* Main Content */
+main {
+    min-height: calc(100vh - 200px);
+}
+
+.content {
+    padding: 3rem 20px;
+}
+
+.content .container {
+    max-width: 800px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    border-bottom: solid 2px var(--accent-color);
+    padding-bottom: 0.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+h2:first-child {
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    transition: all 0.3s;
+}
+
+a:hover {
+    color: var(--selection-text);
+    background-color: var(--selection-bg);
+    text-decoration: underline;
+}
+
+ul, ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Post Cards */
+.posts-preview {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.post-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0;
+    border: solid 1px var(--accent-color);
+    border-left: solid 3px var(--accent-color);
+    transition: all 0.3s;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.post-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.post-card h3 {
+    margin-top: 0;
+}
+
+.post-card h3 a {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+/* Blog Posts */
+.blog-post {
+    margin-bottom: 3rem;
+}
+
+.blog-post h2 {
+    margin-top: 0;
+}
+
+.blog-post h2 a {
+    color: var(--text-color);
+}
+
+.blog-post h2 a:hover {
+    color: var(--accent-color);
+}
+
+hr {
+    border: none;
+    border-top: solid 1px var(--accent-color);
+    margin: 3rem 0;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: solid 2px var(--accent-color);
+    border-radius: 0;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-weight: 600;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-family: 'Inconsolata', 'Courier New', monospace;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+    text-decoration: none;
+    transform: none;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--card-bg);
+    border-top: solid 2px var(--accent-color);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+    padding: 2rem 20px;
+    text-align: center;
+    margin-top: 4rem;
+    box-shadow: 0 -2px 15px rgba(255, 255, 255, 0.1);
+}
+
+footer .container {
+    max-width: 100%;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: var(--accent-color);
+}
+
+footer a:hover {
+    color: var(--hover-color);
+}
+
+/* Responsive Design */
+
+/* Tablets and smaller desktops (1024px and below) */
+@media (max-width: 1024px) {
+    .navbar .container {
+        padding: 0.75rem 15px;
+        gap: 1.5rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .theme-select {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+        padding-right: 1.8rem;
+    }
+
+    .theme-label {
+        font-size: 0.65rem;
+    }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .navbar .container {
+        justify-content: space-between;
+        padding: 0.75rem 10px;
+        gap: 0.75rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.8rem;
+        flex: 1 1 auto;
+    }
+
+    .theme-switcher {
+        gap: 0.5rem;
+    }
+
+    .theme-label {
+        display: none;
+    }
+
+    .theme-select {
+        padding: 0.35rem 0.5rem;
+        font-size: 0.7rem;
+        padding-right: 1.6rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .posts-preview {
+        gap: 1.5rem;
+    }
+
+    .post-card {
+        padding: 1rem;
+    }
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+    .navbar {
+        border-bottom: solid 1px var(--accent-color);
+    }
+
+    .navbar .container {
+        padding: 0.6rem 8px;
+        gap: 0.5rem;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        flex: 1 1 auto;
+    }
+
+    .nav-links {
+        gap: 0.5rem;
+        font-size: 0.65rem;
+        flex: 1 1 auto;
+        order: 3;
+        width: 100%;
+        margin-top: 0.3rem;
+    }
+
+    .nav-links li {
+        flex: 1;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 0.65rem;
+    }
+
+    .theme-switcher {
+        gap: 0.25rem;
+        flex: 1 1 auto;
+    }
+
+    .theme-label {
+        display: none;
+    }
+
+    .theme-select {
+        padding: 0.3rem 0.4rem;
+        font-size: 0.6rem;
+        padding-right: 1.4rem;
+        width: 100%;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .hero {
+        padding: 2rem 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+    }
+
+    .hero .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .content {
+        padding: 1.5rem 10px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .post-card {
+        padding: 0.75rem;
+        border-left-width: 2px;
+    }
+
+    footer {
+        padding: 1.5rem 10px;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Accessibility */
+:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Code blocks (optional) */
+code {
+    background-color: var(--card-bg);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0;
+    font-family: 'Inconsolata', 'Courier New', monospace;
+    font-size: 0.9em;
+    color: var(--text-bright);
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+pre {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 0;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    border: solid 1px var(--accent-color);
+    border-left: solid 3px var(--accent-color);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05), 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    color: var(--text-bright);
+    border: none;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+blockquote {
+    border-left: solid 3px var(--accent-color);
+    padding-left: 1rem;
+    margin-left: 0;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    font-style: italic;
+    box-shadow: inset 10px 0 10px rgba(255, 255, 255, 0.02);
+}

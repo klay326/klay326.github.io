@@ -1,0 +1,12 @@
+{
+  "name": "klay-personal-site",
+  "version": "1.0.0",
+  "description": "Personal website for Klay Adams",
+  "scripts": {
+    "serve": "live-server",
+    "dev": "live-server --port=8080"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
