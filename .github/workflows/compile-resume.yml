@@ -38,5 +38,5 @@ jobs:
           else
             git add resume.pdf
             git commit -m "Auto-compile: Update resume from LaTeX"
-            git push
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
           fi
