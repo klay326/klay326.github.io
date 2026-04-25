@@ -6,6 +6,8 @@
     <title>Blog - Klay Adams</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
+    <link rel="alternate" type="application/rss+xml" title="Klay Adams" href="/feed.xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
 </head>
 <body>
     <nav class="navbar">
@@ -15,6 +17,8 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="now.html">Now</a></li>
             </ul>
             <div class="theme-switcher">
                 <label class="theme-label">Theme:</label>
@@ -30,7 +34,7 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Blog</h1>
+                <h1>Blog<span class="cursor" aria-hidden="true">|</span></h1>
                 <p class="subtitle">Homelab, hardware, automation, and the occasional rabbit hole</p>
             </div>
         </section>
@@ -39,7 +43,11 @@
             <div class="container">
                 <article class="blog-post" id="post-1">
                     <h2><a href="#post-1">Welcome to My Blog</a></h2>
-                    <p class="post-date">December 23, 2025</p>
+                    <p class="post-date">December 23, 2025 <span class="read-time">· 1 min read</span></p>
+                    <div class="post-tags">
+                        <span class="tag">[meta]</span>
+                        <span class="tag">[site]</span>
+                    </div>
                     <p>Welcome to my newly simplified personal website! I decided to move away from the complexity of Jekyll and static site generators to create something much simpler and more maintainable using just HTML and CSS.</p>
                     <p>This approach gives me more control, fewer dependencies, and an easier codebase to update. Stay tuned for posts about Linux, IoT projects, and iOS development.</p>
                 </article>
@@ -49,6 +57,12 @@
                 <article class="blog-post" id="post-2">
                     <h2><a href="#post-2">Up Next</a></h2>
                     <p class="post-date">Coming Soon</p>
+                    <div class="post-tags">
+                        <span class="tag">[homelab]</span>
+                        <span class="tag">[python]</span>
+                        <span class="tag">[hardware]</span>
+                        <span class="tag">[pcb]</span>
+                    </div>
                     <p>Topics I'm planning to write about:</p>
                     <ul>
                         <li>PDU monitoring and UPS integration in a homelab rack</li>
@@ -71,5 +85,10 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
 </body>
 </html>

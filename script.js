@@ -81,7 +81,80 @@ function initThemes() {
 
 // Initialize themes when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initThemes);
+    document.addEventListener('DOMContentLoaded', init);
 } else {
+    init();
+}
+
+function init() {
     initThemes();
+    initActiveNav();
+    initTypingCursor();
+    initBackToTop();
+    initCopyButtons();
+}
+
+function initActiveNav() {
+    const page = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        if (link.getAttribute('href') === page) {
+            link.classList.add('active');
+        }
+    });
+}
+
+function initTypingCursor() {
+    const el = document.getElementById('hero-text');
+    if (!el) return;
+    const text = el.dataset.text || '';
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            el.textContent += text[i++];
+            setTimeout(type, 75);
+        }
+    }
+    type();
+}
+
+function initBackToTop() {
+    const btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.textContent = '^ top';
+    document.body.appendChild(btn);
+
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 300);
+    }, { passive: true });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+function initCopyButtons() {
+    document.querySelectorAll('pre').forEach(pre => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-block-wrapper';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+
+        const btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.textContent = 'copy';
+        wrapper.appendChild(btn);
+
+        btn.addEventListener('click', () => {
+            const code = pre.querySelector('code');
+            navigator.clipboard.writeText(code ? code.textContent : pre.textContent).then(() => {
+                btn.textContent = 'copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+    });
 }

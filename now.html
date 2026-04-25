@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now - Klay Adams</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="alternate" type="application/rss+xml" title="Klay Adams" href="/feed.xml">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Klay Adams</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="now.html">Now</a></li>
+            </ul>
+            <div class="theme-switcher">
+                <label class="theme-label">Theme:</label>
+                <select class="theme-select">
+                    <option value="default">Terminal White</option>
+                    <option value="matrix">Matrix Green</option>
+                    <option value="ember">Ember DEC</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Now<span class="cursor" aria-hidden="true">|</span></h1>
+                <p class="subtitle">What I'm currently up to</p>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container">
+                <p class="now-updated">Last updated: April 2026 &mdash; DFW, TX</p>
+
+                <h2>Work</h2>
+                <p>Hardware validation engineer at Texas Instruments, working on test development and silicon bring-up for leading-edge products. Currently deep in root cause analysis on a test correlation issue across two process nodes.</p>
+
+                <h2>Homelab</h2>
+                <p>Expanding the rack with additional storage and finishing the migration from bare-metal services to Proxmox VMs. The PDU monitoring system is mostly functional — I'm adding per-outlet cost tracking before writing it up as a blog post.</p>
+
+                <h2>Side Projects</h2>
+                <p>Wrapping up a custom DIN-rail relay driver PCB. First article revision came back from fab — fixing a footprint mismatch on the isolated I/O section before sending the second revision.</p>
+                <p>Also working through the whole-home power monitoring setup. CT sensors are installed; waiting on the ESPHome integration to stabilize before going further.</p>
+
+                <h2>Writing</h2>
+                <p>Working on the first real technical post for this blog — the PDU monitoring writeup. Hoping to publish it alongside the open-source code once the feature set is solid.</p>
+
+                <h2>Reading</h2>
+                <ul>
+                    <li><em>The Practice of System and Network Administration</em> &mdash; Limoncelli et al.</li>
+                    <li>Various datasheets and app notes (the usual)</li>
+                </ul>
+
+                <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--text-muted);">
+                    This is a <a href="https://nownownow.com/about" target="_blank">/now page</a> — a snapshot of what I'm focused on at this point in time.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Klay Adams. All rights reserved.</p>
+            <p>
+                <a href="https://github.com/klay326" target="_blank">GitHub</a> •
+                <a href="mailto:klayaa@me.com">Email</a>
+            </p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

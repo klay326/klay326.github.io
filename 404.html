@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klay Adams</title>
+    <title>404 - Klay Adams</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
-    <link rel="alternate" type="application/rss+xml" title="Klay Adams" href="/feed.xml">
 </head>
 <body>
     <nav class="navbar">
@@ -33,30 +32,22 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1><span id="hero-text" data-text="Klay Adams"></span><span class="cursor" aria-hidden="true">|</span></h1>
-                <p class="subtitle">Electrical Engineer &mdash; Hardware Validation &mdash; Homelab Enthusiast</p>
+                <h1>404<span class="cursor" aria-hidden="true">|</span></h1>
+                <p class="subtitle">page not found</p>
             </div>
         </section>
 
         <section class="content">
             <div class="container">
-                <h2>Welcome</h2>
-                <p>I'm Klay — an Electrical Engineer working in hardware validation at Texas Instruments in the DFW area. Outside of work I run a self-hosted homelab rack, build home automation systems, and tinker with anything that has a power rail. This site is where I document projects, share notes, and think out loud.</p>
-                
-                <h2>Latest Posts</h2>
-                <div class="posts-preview">
-                    <article class="post-card">
-                        <h3><a href="blog.html#post-1">Welcome to My Blog</a></h3>
-                        <p class="post-date">December 23, 2025 <span class="read-time">· 1 min read</span></p>
-                        <div class="post-tags">
-                            <span class="tag">[meta]</span>
-                            <span class="tag">[site]</span>
-                        </div>
-                        <p>Getting started with a simpler website setup.</p>
-                    </article>
-                </div>
-                
-                <p><a href="blog.html" class="btn">View All Posts →</a></p>
+                <pre><code>$ curl https://klayadams.com<span id="404-path"></span>
+curl: (404) The requested URL was not found on this server.
+$ _</code></pre>
+
+                <p>That path doesn't exist. It may have moved, been deleted, or never existed.</p>
+
+                <p>
+                    <a href="index.html" class="btn">← Go Home</a>
+                </p>
             </div>
         </section>
     </main>
@@ -71,5 +62,9 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+        const el = document.getElementById('404-path');
+        if (el) el.textContent = window.location.pathname;
+    </script>
 </body>
 </html>

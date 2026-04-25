@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Klay Adams</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="alternate" type="application/rss+xml" title="Klay Adams" href="/feed.xml">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Klay Adams</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="now.html">Now</a></li>
+            </ul>
+            <div class="theme-switcher">
+                <label class="theme-label">Theme:</label>
+                <select class="theme-select">
+                    <option value="default">Terminal White</option>
+                    <option value="matrix">Matrix Green</option>
+                    <option value="ember">Ember DEC</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Projects<span class="cursor" aria-hidden="true">|</span></h1>
+                <p class="subtitle">Hardware, homelab, and automation builds</p>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container">
+                <h2>Active Projects</h2>
+                <div class="projects-grid">
+
+                    <div class="project-card">
+                        <h3>Homelab Rack</h3>
+                        <span class="project-status">Active</span>
+                        <p>A self-hosted infrastructure rack running a mix of bare-metal and virtualized services. Includes a managed PDU, APC UPS with network management card, and a dedicated switch. Services span media, networking, monitoring, and home automation.</p>
+                        <p>Currently expanding storage capacity and migrating workloads to Proxmox VMs for better isolation and snapshotting.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Proxmox</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">SNMP</span>
+                            <span class="tech-tag">Grafana</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>PDU Monitoring System</h3>
+                        <span class="project-status">In Progress</span>
+                        <p>Python-based monitoring daemon for a smart rack PDU. Polls outlet-level power draw via SNMP, stores time-series data, and pushes alerts when thresholds are exceeded. Integrates with Home Assistant for dashboard visibility.</p>
+                        <p>Next milestone: per-outlet cost tracking and automated load-shedding on UPS low-battery events.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SNMP</span>
+                            <span class="tech-tag">Home Assistant</span>
+                            <span class="tech-tag">InfluxDB</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Whole-Home Power Monitor</h3>
+                        <span class="project-status">In Progress</span>
+                        <p>Real-time home energy monitoring using CT clamp sensors on the main panel. Data flows into Home Assistant, gets stored in InfluxDB, and is visualized in Grafana. Goal is per-circuit visibility and anomaly detection for HVAC and major appliances.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Home Assistant</span>
+                            <span class="tech-tag">ESPHome</span>
+                            <span class="tech-tag">InfluxDB</span>
+                            <span class="tech-tag">Grafana</span>
+                            <span class="tech-tag">CT Sensors</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Custom PCB Design</h3>
+                        <span class="project-status">Ongoing</span>
+                        <p>Occasional PCB projects for custom automation hardware — sensor breakout boards, power conditioning circuits, and enclosure-mounted control panels. Designed in KiCad, fabricated through JLCPCB.</p>
+                        <p>Current board: a compact DIN-rail mount relay driver with isolated I/O for Home Assistant integration.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">KiCad</span>
+                            <span class="tech-tag">SMD Soldering</span>
+                            <span class="tech-tag">JLCPCB</span>
+                            <span class="tech-tag">ESP32</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h2>Work Projects</h2>
+                <div class="projects-grid">
+
+                    <div class="project-card">
+                        <h3>ATE Test Development — Texas Instruments</h3>
+                        <span class="project-status">Day Job</span>
+                        <p>Developing and executing test plans for leading-edge silicon at Texas Instruments. Responsibilities include test hardware design and bring-up, ATE program development, DFT correlation, and driving root cause analysis across multiple process nodes.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">ATE</span>
+                            <span class="tech-tag">Hardware Validation</span>
+                            <span class="tech-tag">Failure Analysis</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Klay Adams. All rights reserved.</p>
+            <p>
+                <a href="https://github.com/klay326" target="_blank">GitHub</a> •
+                <a href="mailto:klayaa@me.com">Email</a>
+            </p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
