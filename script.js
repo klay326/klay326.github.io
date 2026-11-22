@@ -39,7 +39,7 @@ function setTheme(themeName) {
     document.documentElement.style.setProperty('--accent-color', theme.accentColor);
     document.documentElement.style.setProperty('--border-color', theme.borderColor);
     document.documentElement.style.setProperty('--card-bg', theme.cardBg);
-    document.documentElement.style.setProperty('--text-muted', '#666666');
+    document.documentElement.style.setProperty('--text-muted', '#9a9a9a');
     document.documentElement.style.setProperty('--text-bright', theme.textColor);
     document.documentElement.style.setProperty('--hover-color', theme.accentColor);
     document.documentElement.style.setProperty('--selection-bg', theme.accentColor);

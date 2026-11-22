@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Klay Adams</title>
+    <meta name="description" content="Page not found.">
+    <meta name="robots" content="noindex">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=20261122">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="style.css?v=20261122b">
 </head>
 <body>
     <nav class="navbar">
@@ -17,10 +22,11 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="now.html">Now</a></li>
+                <li><a href="resume.pdf" target="_blank" rel="noopener">Resume</a></li>
             </ul>
             <div class="theme-switcher">
-                <label class="theme-label">Theme:</label>
-                <select class="theme-select">
+                <label class="theme-label" for="theme-select">Theme:</label>
+                <select class="theme-select" id="theme-select">
                     <option value="default">Terminal White</option>
                     <option value="matrix">Matrix Green</option>
                     <option value="ember">Ember DEC</option>
@@ -56,12 +62,14 @@ $ _</code></pre>
         <div class="container">
             <p>&copy; 2026 Klay Adams. All rights reserved.</p>
             <p>
-                <a href="https://github.com/klay326" target="_blank">GitHub</a> •
+                <a href="https://www.linkedin.com/in/klay-adams/" target="_blank" rel="noopener">LinkedIn</a> •
+                <a href="https://github.com/klay326" target="_blank" rel="noopener">GitHub</a> •
+                <a href="resume.pdf" target="_blank" rel="noopener">Resume</a> •
                 <a href="mailto:klayaa@me.com">Email</a>
             </p>
         </div>
     </footer>
-    <script src="script.js?v=20261122"></script>
+    <script src="script.js?v=20261122b"></script>
     <script>
         const el = document.getElementById('404-path');
         if (el) el.textContent = window.location.pathname;

@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Klay Adams</title>
+    <meta name="description" content="Notes on homelab, hardware, automation, and test engineering from Klay Adams.">
+    <link rel="canonical" href="https://klayadams.com/blog.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Klay Adams">
+    <meta property="og:title" content="Blog - Klay Adams">
+    <meta property="og:description" content="Notes on homelab, hardware, automation, and test engineering from Klay Adams.">
+    <meta property="og:url" content="https://klayadams.com/blog.html">
+    <meta property="og:image" content="https://klayadams.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=20261122">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="style.css?v=20261122b">
     <link rel="alternate" type="application/rss+xml" title="Klay Adams" href="/feed.xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
 </head>
@@ -19,10 +33,11 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="now.html">Now</a></li>
+                <li><a href="resume.pdf" target="_blank" rel="noopener">Resume</a></li>
             </ul>
             <div class="theme-switcher">
-                <label class="theme-label">Theme:</label>
-                <select class="theme-select">
+                <label class="theme-label" for="theme-select">Theme:</label>
+                <select class="theme-select" id="theme-select">
                     <option value="default">Terminal White</option>
                     <option value="matrix">Matrix Green</option>
                     <option value="ember">Ember DEC</option>
@@ -79,12 +94,14 @@
         <div class="container">
             <p>&copy; 2026 Klay Adams. All rights reserved.</p>
             <p>
-                <a href="https://github.com/klay326" target="_blank">GitHub</a> •
+                <a href="https://www.linkedin.com/in/klay-adams/" target="_blank" rel="noopener">LinkedIn</a> •
+                <a href="https://github.com/klay326" target="_blank" rel="noopener">GitHub</a> •
+                <a href="resume.pdf" target="_blank" rel="noopener">Resume</a> •
                 <a href="mailto:klayaa@me.com">Email</a>
             </p>
         </div>
     </footer>
-    <script src="script.js?v=20261122"></script>
+    <script src="script.js?v=20261122b"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>

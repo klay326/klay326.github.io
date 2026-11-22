@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://klayadams.com/sitemap.xml
