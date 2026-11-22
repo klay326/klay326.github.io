@@ -290,8 +290,13 @@ li {
 /* Post Cards */
 .posts-preview {
     display: grid;
-    gap: 2rem;
-    margin: 2rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.post-card p:last-child {
+    margin-bottom: 0;
 }
 
 .post-card {
