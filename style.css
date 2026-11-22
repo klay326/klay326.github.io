@@ -738,6 +738,11 @@ blockquote {
     box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
+/* An odd last card spans the full row instead of leaving a gap */
+.project-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+}
+
 .project-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.08);
