@@ -61,7 +61,7 @@
                         <h3>PDU Monitoring System</h3>
                         <span class="project-status">In Progress</span>
                         <p>Python-based monitoring daemon for a smart rack PDU. Polls outlet-level power draw via SNMP, stores time-series data, and pushes alerts when thresholds are exceeded. Integrates with Home Assistant for dashboard visibility.</p>
-                        <p>Automated UPS load-shedding is now live: on battery, Home Assistant shuts down the desktop, then non-critical services, then each Proxmox node in order through its API. Next milestone: per-outlet cost tracking.</p>
+                        <p>Automated UPS load-shedding is now live: on battery, Home Assistant shuts down the desktop, then non-critical services, then each Proxmox node in order through its API. Per-outlet cost tracking is live too: a monthly report ranks every outlet by kWh and cost.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">SNMP</span>
@@ -121,6 +121,112 @@
                             <span class="tech-tag">Closed-Loop Steppers</span>
                             <span class="tech-tag">VFD</span>
                             <span class="tech-tag">G-code</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h2>Inside the Homelab</h2>
+                <p>The rack has grown well past a hobby box. Here's what's running on it.</p>
+
+                <div class="projects-grid">
+
+                    <div class="project-card">
+                        <h3>Compute &amp; Storage</h3>
+                        <span class="project-status">Active</span>
+                        <p>A four-node Proxmox cluster: a Tyan server with a Xeon Gold 5215 and 25GbE Mellanox networking, two Ryzen nodes, and an HP EliteDesk. TrueNAS runs as a VM with the SATA controllers passed straight through and serves NFS to the rest of the cluster.</p>
+                        <p>Proxmox Backup Server runs weekly backups with retention, daily ZFS snapshots protect the main pool, and Scrutiny tracks SMART health on every drive.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Proxmox</span>
+                            <span class="tech-tag">TrueNAS</span>
+                            <span class="tech-tag">ZFS</span>
+                            <span class="tech-tag">NFS</span>
+                            <span class="tech-tag">PCIe Passthrough</span>
+                            <span class="tech-tag">PBS</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Networking &amp; Secure Access</h3>
+                        <span class="project-status">Active</span>
+                        <p>A UniFi Dream Machine SE and USW-Pro-Max-24 run the network. Services are published through Cloudflare Tunnels with no open inbound ports, gated by Cloudflare Access and Authentik single sign-on across about 25 apps.</p>
+                        <p>Tailscale handles private remote access, and a Windows Server 2025 VM runs a lab Active Directory domain.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">UniFi</span>
+                            <span class="tech-tag">Cloudflare Zero Trust</span>
+                            <span class="tech-tag">Authentik</span>
+                            <span class="tech-tag">Tailscale</span>
+                            <span class="tech-tag">Active Directory</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Monitoring &amp; Logging</h3>
+                        <span class="project-status">Active</span>
+                        <p>Prometheus and Grafana dashboards for every node, including a custom exporter for the Intel Arc GPU. Graylog centralizes logs from Docker, Proxmox, TrueNAS, UniFi, Home Assistant, and the Windows domain controller.</p>
+                        <p>Uptime Kuma watches every service, alerts land in Discord, and there's a public status page at <a href="https://status.klayshomelab.com" target="_blank">status.klayshomelab.com</a>.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Prometheus</span>
+                            <span class="tech-tag">Grafana</span>
+                            <span class="tech-tag">Graylog</span>
+                            <span class="tech-tag">Uptime Kuma</span>
+                            <span class="tech-tag">Discord</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Command Center &amp; Self-Healing</h3>
+                        <span class="project-status">Active</span>
+                        <p>A custom dashboard that tracks every service's installed version against the latest release, pending OS updates, media pipeline health, storage growth forecasts, and backup freshness, refreshed by systemd timers.</p>
+                        <p>Behind it are self-healing jobs: timers that remount NFS when a cluster reboot races the NAS, a nightly fstrim across nodes, and the staged UPS shutdown.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">systemd</span>
+                            <span class="tech-tag">Bash</span>
+                            <span class="tech-tag">REST APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Self-Hosted Services</h3>
+                        <span class="project-status">Active</span>
+                        <p>Jellyfin with Intel Arc A380 hardware transcoding and HDR tone mapping, plus ErsatzTV for 24/7 live TV channels. Immich for photos with machine learning on the Arc GPU, and Paperless-ngx for documents.</p>
+                        <p>Everything runs in LXC containers and Docker, with Authentik SSO wherever the app supports it.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Jellyfin</span>
+                            <span class="tech-tag">Intel Arc</span>
+                            <span class="tech-tag">Immich</span>
+                            <span class="tech-tag">Paperless-ngx</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">LXC</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Home Assistant</h3>
+                        <span class="project-status">Active</span>
+                        <p>Runs the apartment: presence-aware thermostat schedules, mmWave occupancy sensing in the office, Zigbee sensors, and 3D printer automations that pre-cool the office during prints. Daily energy cost notifications and a monthly bill estimate come from the power monitoring data.</p>
+                        <p>The config syncs to git daily, and a daily audit flags broken or unavailable automations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Home Assistant</span>
+                            <span class="tech-tag">Zigbee</span>
+                            <span class="tech-tag">mmWave</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Git</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Apps I Built &amp; Host</h3>
+                        <span class="project-status">Live</span>
+                        <p><a href="https://curiocalc.org" target="_blank">CurioCalc</a>: a community catalog for vintage calculator collectors, with an iOS app. ScanAtlas: a map of airport security screening equipment built from public contract records and press releases. PartLedger: a personal inventory and valuation tracker.</p>
+                        <p>All three run on the cluster as Docker Compose stacks behind Cloudflare Tunnels.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">PostGIS</span>
+                            <span class="tech-tag">Redis</span>
                         </div>
                     </div>
 
