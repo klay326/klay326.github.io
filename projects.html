@@ -61,7 +61,7 @@
                         <h3>PDU Monitoring System</h3>
                         <span class="project-status">In Progress</span>
                         <p>Python-based monitoring daemon for a smart rack PDU. Polls outlet-level power draw via SNMP, stores time-series data, and pushes alerts when thresholds are exceeded. Integrates with Home Assistant for dashboard visibility.</p>
-                        <p>Next milestone: per-outlet cost tracking and automated load-shedding on UPS low-battery events.</p>
+                        <p>Automated UPS load-shedding is now live: on battery, Home Assistant shuts down the desktop, then non-critical services, then each Proxmox node in order through its API. Next milestone: per-outlet cost tracking.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">SNMP</span>
@@ -94,6 +94,20 @@
                             <span class="tech-tag">SMD Soldering</span>
                             <span class="tech-tag">JLCPCB</span>
                             <span class="tech-tag">ESP32</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>RISC-V Computer &amp; IJTAG Test Chip</h3>
+                        <span class="project-status">In Progress</span>
+                        <p>Building a RISC-V computer on a QMTech Kintex-7 FPGA board using the fully open-source openXC7 toolchain and openFPGALoader.</p>
+                        <p>Alongside it, designing an IJTAG (IEEE 1687) "fault hunt" test chip for an early-2027 Tiny Tapeout shuttle: design-for-test from the silicon side.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">FPGA</span>
+                            <span class="tech-tag">RISC-V</span>
+                            <span class="tech-tag">openXC7</span>
+                            <span class="tech-tag">IJTAG</span>
+                            <span class="tech-tag">Tiny Tapeout</span>
                         </div>
                     </div>
 
